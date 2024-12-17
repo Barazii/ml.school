@@ -5,7 +5,7 @@ Resources:
   EC2KeyPair:
     Type: AWS::EC2::KeyPair
     Properties:
-      KeyName: 'mlschool'
+      KeyName: 'mlflow'
 
   EC2SecurityGroup:
     Type: AWS::EC2::SecurityGroup
@@ -24,8 +24,8 @@ Resources:
   RemoteEC2Instance:
     Type: AWS::EC2::Instance
     Properties:
-      InstanceType: t2.micro
-      ImageId: ami-0e86e20dae9224db8
+      InstanceType: t3.micro
+      ImageId: ami-075449515af5df0d1
       SecurityGroupIds: 
         - !Ref EC2SecurityGroup
       KeyName: !Ref EC2KeyPair
@@ -60,7 +60,7 @@ Resources:
 
       Tags:
         - Key: Name
-          Value: mlschool
+          Value: mlflowserver
 Outputs:
 
   KeyPair:
